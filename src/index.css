@@ -34,9 +34,12 @@
   --color-background: #f6f6f6;
   --color-ink: #232323;
   --color-success: #08f4a1;
-  --color-muted: #fef0df;
+  --color-light-matted: #b2b1b1;
+  --color-matted: #72706e;
 }
 
 body {
   padding-inline: 2.5rem;
+  color: var(--color-ink);
+  background-color: var(--color-background);
 }

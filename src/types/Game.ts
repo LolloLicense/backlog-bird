@@ -3,7 +3,7 @@ export type Game = {
   title: string;
   platform: string;
   status: string;
-  raiting: number | null;
+  rating: number | null;
   coverUrl: string;
   notes: string;
   createdAt: string;
