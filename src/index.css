@@ -36,3 +36,7 @@
   --color-success: #08f4a1;
   --color-muted: #fef0df;
 }
+
+body {
+  padding-inline: 2.5rem;
+}

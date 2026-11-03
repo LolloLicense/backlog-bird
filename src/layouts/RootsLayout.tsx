@@ -1,11 +1,10 @@
 import { Outlet } from "react-router";
+import Header from "../components/Header";
 
 const RootsLayout = () => {
   return (
     <>
-      <header>
-        <h1>Blacklog birds</h1>
-      </header>
+      <Header />
 
       <main>
         <Outlet />
