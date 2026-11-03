@@ -1,8 +1,20 @@
 import GameCardGrid from "../components/GameCardGrid";
 import { useGames } from "../hooks/useGames";
+import GameFilter from "./GameFilter";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import type { GameStatus } from "../types/Game";
 
 const GameSection = () => {
   const { games, isLoading, error } = useGames();
+  const [selectedStatus, setSelectedStatus] = useLocalStorage<
+    "all" | GameStatus
+  >("game-filter", "all");
+
+  const filteredGames =
+    selectedStatus === "all"
+      ? games
+      : games.filter((game) => game.status === selectedStatus);
+
   return (
     <>
       {error && <p className="error">Could not load games: {error}</p>}
@@ -17,7 +29,11 @@ const GameSection = () => {
           Currently in the nest
         </h2>
       </div>
-      <GameCardGrid games={games} />
+      <GameFilter
+        selectedStatus={selectedStatus}
+        onStatusChange={setSelectedStatus}
+      />
+      <GameCardGrid games={filteredGames} />
     </>
   );
 };

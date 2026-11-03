@@ -9,3 +9,5 @@ export type Game = {
   createdAt: string;
   upDatedAt: string;
 };
+
+export type GameStatus = "want" | "playing" | "completed" | "dropped";
