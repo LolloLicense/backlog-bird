@@ -77,7 +77,7 @@ const GameCard = ({ game }: GameCardProps) => {
         <div
           className={`h-40 p-4 flex flex-col border-t-3 border-ink ${styles?.bottom}`}
         >
-          <h3 className="font-dazzle text-md tracking-wider min-h-16">
+          <h3 className="font-dazzle uppercase text-md tracking-wider min-h-16">
             {game.title}
           </h3>
 
