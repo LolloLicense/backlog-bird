@@ -3,7 +3,9 @@ import "./index.css";
 function App() {
   return (
     <>
-      <h1 className="text-5xl font-bold">Backlog bird</h1>
+      <h1 className="text-5xl font-bold font-dazzle text-accent">
+        Backlog bird
+      </h1>
     </>
   );
 }
