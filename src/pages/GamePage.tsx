@@ -1,7 +1,9 @@
+import Hero from "../components/Hero";
+
 const GamePage = () => {
   return (
     <>
-      <h1>Game Page</h1>
+      <Hero />
     </>
   );
 };
