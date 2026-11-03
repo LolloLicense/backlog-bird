@@ -7,7 +7,7 @@ type GameCardGridProps = {
 
 const GameCardGrid = ({ games }: GameCardGridProps) => {
   return (
-    <section className="grid grid-cols-4 gap-4">
+    <section className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
       {games.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}

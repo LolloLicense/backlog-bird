@@ -70,19 +70,19 @@ const GameCard = ({ game }: GameCardProps) => {
             {game.status}
           </span>
           <PlatformIcon
-            className="w-30 h-auto self-center"
+            className="w-28 h-auto self-center"
             aria-hidden="true"
           />
         </div>
         <div
           className={`h-40 p-4 flex flex-col border-t-3 border-ink ${styles?.bottom}`}
         >
-          <h3 className="font-dazzle text-md tracking-wider min-h-12">
+          <h3 className="font-dazzle text-md tracking-wider min-h-16">
             {game.title}
           </h3>
 
           <p className="uppercase font-fira pt-2">{game.platform}</p>
-          <div className="flex justify-between pt-4">
+          <div className="flex justify-between pt-2">
             <div className="flex">
               {stars.map((star) => (
                 <img
