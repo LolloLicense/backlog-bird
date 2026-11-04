@@ -51,7 +51,14 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
           </div>
           <div className="py-2 md:py-8">
             <h3 className="font-dazzle text-xs uppercase pb-2">Rating :</h3>
-            <div className="flex">
+            <div
+              className="flex"
+              aria-label={
+                game.rating !== null
+                  ? `Rating: ${game.rating} out of 5`
+                  : "Not rated"
+              }
+            >
               {stars.map((star) => (
                 <img
                   key={star}
@@ -60,6 +67,7 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
                       ? "/icons/star-filled.svg"
                       : "/icons/star-outlined.svg"
                   }
+                  alt=""
                 />
               ))}
             </div>
