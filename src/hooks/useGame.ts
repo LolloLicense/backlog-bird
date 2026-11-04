@@ -5,7 +5,7 @@ export const useGame = (id: string | undefined) => {
   const [isLoading, setIsLoading] = useState(false);
   const [game, setGame] = useState<Game | null>(null);
   const [error, setError] = useState("");
-
+  // GET ONE
   useEffect(() => {
     if (!id) return;
     const fetchGame = async () => {
@@ -29,5 +29,18 @@ export const useGame = (id: string | undefined) => {
     fetchGame();
   }, [id]);
 
-  return { game, error, isLoading } as const;
+  // DELETE
+  const deleteGame = async () => {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/games/${id}`,
+      {
+        method: "DELETE",
+      },
+    );
+    if (!response.ok) {
+      return false;
+    }
+    return true;
+  };
+  return { game, error, isLoading, deleteGame } as const;
 };
