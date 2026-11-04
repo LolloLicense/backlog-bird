@@ -36,7 +36,9 @@ const GameDetailPage = () => {
           <img src="/icons/arrow.svg" alt="" className=" -rotate-90" />
           Back to all games
         </Link>
-        <GameDetailCard game={game} onDelete={handleDelete} />
+        <div className="w-full max-w-5xl mx-auto">
+          <GameDetailCard game={game} onDelete={handleDelete} />
+        </div>
       </section>
     </>
   );

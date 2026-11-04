@@ -29,6 +29,8 @@ export const useGame = (id: string | undefined) => {
     fetchGame();
   }, [id]);
 
+  // PATCH
+
   // DELETE
   const deleteGame = async () => {
     const response = await fetch(
@@ -42,5 +44,6 @@ export const useGame = (id: string | undefined) => {
     }
     return true;
   };
+
   return { game, error, isLoading, deleteGame } as const;
 };

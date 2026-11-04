@@ -1,5 +1,6 @@
 import type { Game } from "../types/game";
 import { formatDate } from "../utils/format";
+import { getPlatformIcon } from "../utils/gameUi";
 
 type GameDetailCardProps = {
   game: Game;
@@ -8,18 +9,25 @@ type GameDetailCardProps = {
 
 const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
   const stars = [1, 2, 3, 4, 5];
+  const PlatformIcon = getPlatformIcon(game.platform);
   return (
     <>
-      <article className="grid grid-cols-2 gap-4 items-stretch">
-        <div className="relative min-h-0">
-          <img
-            src={game.coverUrl}
-            alt={`Cover for ${game.title}`}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+      <article className="grid md:grid-cols-2 gap-4 items-stretch pt-8">
+        <div className="relative aspect-2/2">
+          {game.coverUrl ? (
+            <img
+              src={game.coverUrl}
+              alt={`Cover for ${game.title}`}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="bg-ink flex items-center justify-center w-full h-full">
+              <PlatformIcon className="text-success text-9xl h-auto self-center p-4" />
+            </div>
+          )}
         </div>
         {/* Right column */}
-        <div className="flex flex-col">
+        <div className="flex flex-col h-full">
           <span className="font-dazzle text-xs tracking-wider pb-2">
             Status: {game.status}
           </span>
@@ -27,7 +35,7 @@ const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
           <h1 className="font-dazzle uppercase text-3xl tracking-wider">
             {game.title}
           </h1>
-          <div className="py-4">
+          <div className="pt-8">
             <h3 className="font-dazzle text-xs uppercase">Platform :</h3>
             <p className="uppercase font-fira pt-2">{game.platform}</p>
           </div>
@@ -68,7 +76,7 @@ const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
               </div>
             )}
           </div>
-          <div className="flex gap-4 pt-4 justify-start">
+          <div className="flex gap-4 pt-4 justify-start mt-auto">
             <button
               type="button"
               className="bg-accent text-ink text-sm px-4 py-2 font-dazzle cursor-pointer"
