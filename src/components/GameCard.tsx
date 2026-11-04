@@ -66,6 +66,7 @@ const GameCard = ({ game }: GameCardProps) => {
                       ? "/icons/star-filled.svg"
                       : "/icons/star-outlined.svg"
                   }
+                  alt=""
                 />
               ))}
             </div>
