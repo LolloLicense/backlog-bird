@@ -1,8 +1,8 @@
 export type Game = {
   id: string;
   title: string;
-  platform: string;
-  status: string;
+  platform: Platform;
+  status: GameStatus;
   rating: number | null;
   coverUrl: string;
   notes: string;
@@ -11,3 +11,11 @@ export type Game = {
 };
 
 export type GameStatus = "want" | "playing" | "completed" | "dropped";
+
+export type Platform =
+  | "PC"
+  | "Switch"
+  | "Playstation 5"
+  | "Xbox"
+  | "Game Boy"
+  | "Other";

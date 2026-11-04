@@ -6,6 +6,7 @@ export const useGames = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
 
+  // GET ALL
   useEffect(() => {
     const fetchGames = async () => {
       try {
@@ -26,6 +27,8 @@ export const useGames = () => {
     };
     fetchGames();
   }, []);
+
+  // POST
 
   return { games, isLoading, error };
 };
