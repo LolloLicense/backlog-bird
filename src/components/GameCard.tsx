@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import type { Game } from "../types/Game";
+import type { Game, Platform } from "../types/Game";
 import {
   TfiGame,
   TfiTablet,
@@ -38,7 +38,7 @@ const getStatusColor = (status: Game["status"]) => {
   }
 };
 
-const getPlatformIcon = (platform: string) => {
+const getPlatformIcon = (platform: Platform) => {
   switch (platform.toLocaleLowerCase()) {
     case "pc":
       return TfiHeadphoneAlt;
