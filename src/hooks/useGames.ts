@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Game, NewGame } from "../types/game";
+import type { Game, GameFormData } from "../types/game";
 
 export const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -29,7 +29,7 @@ export const useGames = () => {
   }, []);
 
   // POST
-  const addGame = async (newGame: NewGame) => {
+  const addGame = async (newGame: GameFormData) => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/games`, {
         method: "POST",

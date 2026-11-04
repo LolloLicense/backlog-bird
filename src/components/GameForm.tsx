@@ -1,11 +1,11 @@
 import { useState, type SubmitEvent } from "react";
-import type { GameStatus, Platform, NewGame } from "../types/game";
+import type { GameStatus, Platform, GameFormData } from "../types/game";
 import PlatformSelect from "./PlatformSelect";
 import StatusSelect from "./StatusSelect";
 import RatingSelect from "./RatingSelect";
 
 type GameFormProps = {
-  onSubmit: (game: NewGame) => void;
+  onSubmit: (game: GameFormData) => void;
 };
 type Errors = {
   title?: string;

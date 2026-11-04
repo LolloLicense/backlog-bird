@@ -20,7 +20,7 @@ export type Platform =
   | "Game Boy"
   | "Other";
 
-export type NewGame = {
+export type GameFormData = {
   title: string;
   platform: Platform;
   status: GameStatus;
