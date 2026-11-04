@@ -14,7 +14,7 @@ Ironically built by someone who doesn't play games.
 
 ## Live site
 
-**[View Backlog Bird](https://backlog-bird-git-main-lollolicense.vercel.app/)**
+**[View Backlog Bird](https://backlog-bird.vercel.app/)**
 
 ## About the project
 
