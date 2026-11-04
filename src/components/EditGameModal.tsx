@@ -44,6 +44,7 @@ const EditGameModal = ({ game, onClose, onSubmit }: EditGameModalProps) => {
           notes: game.notes,
         }}
         onSubmit={onSubmit}
+        submitLabel="Save Changes"
       />
     </dialog>
   );

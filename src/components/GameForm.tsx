@@ -7,14 +7,20 @@ import RatingSelect from "./RatingSelect";
 type GameFormProps = {
   onSubmit: (game: GameFormData) => void;
   initialValues?: GameFormData;
+  submitLabel?: string;
 };
+
 type Errors = {
   title?: string;
   platform?: string;
   status?: string;
 };
 
-const GameForm = ({ onSubmit, initialValues }: GameFormProps) => {
+const GameForm = ({
+  onSubmit,
+  initialValues,
+  submitLabel = "Add Game",
+}: GameFormProps) => {
   const [title, setTitle] = useState(initialValues?.title ?? "");
   const [platform, setPlatform] = useState<Platform | "">(
     initialValues?.platform ?? "",
@@ -138,7 +144,7 @@ const GameForm = ({ onSubmit, initialValues }: GameFormProps) => {
         type="submit"
         className="font-fira font-bold uppercase py-4 px-4 bg-accent text-lg justify-self-end cursor-pointer"
       >
-        Add Game
+        {submitLabel}
       </button>
     </form>
   );
