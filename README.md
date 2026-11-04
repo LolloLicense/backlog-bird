@@ -1,75 +1,85 @@
-# React + TypeScript + Vite
+# Backlog Bird
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A game backlog built with React and TypeScript as part of my Front End Developer studies at Medieinstitutet.
 
-Currently, two official plugins are available:
+For keeping track of the games you're playing, the games you're definitely going to play and the ones we don't talk about anymore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Ironically built by someone who doesn't play games.
 
-## React Compiler
+![React](https://img.shields.io/badge/React-202221?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-202221?style=for-the-badge&logo=typescript&logoColor=3178C6)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-202221?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4)
+![Vite](https://img.shields.io/badge/Vite-202221?style=for-the-badge&logo=vite&logoColor=646CFF)
+![React Router](https://img.shields.io/badge/React_Router-202221?style=for-the-badge&logo=reactrouter&logoColor=CA4245)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Live site
 
-## Expanding the ESLint configuration
+**[View Backlog Bird](VERCEL-LINK)**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## About the project
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Backlog Bird is a CRUD application connected to the Questlog API. It lets you keep a personal game backlog and track what you want to play, what you are currently playing and what happened to the games you swore you would finish.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- View all games in the backlog
+- Filter games by status: Want to play, Playing, Completed and Dropped
+- View individual game details
+- Add new games
+- Edit existing games
+- Delete games
+- Add ratings and notes
+- Status filter saved between visits using localStorage
+- Loading and error states
+- Responsive layout for different screen sizes
 
+## Design
+
+The layout and visual identity were designed in Figma before development, including the Backlog Bird logo.
+
+I wanted it to feel like its own thing rather than yet another dark and neon gaming interface.
+
+## Getting started
+
+Clone the repository and install the dependencies:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+Start the development server:
+```bash
+npm run dev
 ```
+
+Create a production build:
+```bash
+npm run build
+```
+
+## API
+
+The project uses the Questlog API to store and manage the game backlog.
+
+**Handle:** `backlog-bird`
+
+The handle keeps the games for this project separate from games created by other users of the API.
+
+## Custom hooks
+
+The application uses custom hooks to keep the API logic separate from the components.
+
+`useGames` handles the collection of games. It fetches the full game list and handles adding new games.
+
+`useGame` takes a game ID and handles the API requests for that specific game, including fetching, updating and deleting it.
+
+`useLocalStorage` stores the selected status filter, so the filter stays the same even after reloading the page.
+
+I chose to keep this logic in custom hooks instead of putting the fetch requests directly in the components. This keeps the components focused on the UI and separates the logic for the game collection from the logic for an individual game.
+
+## Target grade
+
+**VG**
+
+## That's it!
+
+Thanks for stopping by ✌️
