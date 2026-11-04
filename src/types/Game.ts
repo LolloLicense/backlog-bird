@@ -19,3 +19,11 @@ export type Platform =
   | "Xbox"
   | "Game Boy"
   | "Other";
+
+export type NewGame = {
+  title: string;
+  platform: Platform;
+  status: GameStatus;
+  rating: number | null;
+  notes: string;
+};

@@ -1,7 +1,7 @@
 import type { Platform } from "../types/game";
 
 type PlatformSelectProps = {
-  value: string;
+  value: Platform | "";
   onChange: (value: Platform) => void;
 };
 
@@ -16,13 +16,21 @@ const platforms: Platform[] = [
 
 const PlatformSelect = ({ value, onChange }: PlatformSelectProps) => {
   return (
-    <label className="uppercase font-dazzle text-sm" htmlFor="platform">
-      Platform
+    <label
+      className="flex flex-col gap-2 uppercase text-2xl font-dazzle"
+      htmlFor="platform"
+    >
       <select
         id="platform"
+        className="border-3 border-ink py-2"
         value={value}
+        required
         onChange={(e) => onChange(e.target.value as Platform)}
       >
+        <option value="" disabled>
+          Select platform
+        </option>
+
         {platforms.map((platform) => (
           <option key={platform} value={platform}>
             {platform}

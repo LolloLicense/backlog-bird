@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Game } from "../types/game";
+import type { Game, NewGame } from "../types/game";
 
 export const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);
@@ -29,6 +29,27 @@ export const useGames = () => {
   }, []);
 
   // POST
+  const addGame = async (newGame: NewGame) => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/games`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newGame),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.message);
+        return null;
+      }
 
-  return { games, isLoading, error };
+      return data;
+    } catch (error) {
+      setError(error instanceof Error ? error.message : "Unknown error");
+      return null;
+    }
+  };
+
+  return { games, isLoading, error, addGame };
 };
