@@ -32,6 +32,7 @@ Backlog Bird is a CRUD application connected to the Questlog API. It lets you ke
 - Status filter saved between visits using localStorage
 - Loading and error states
 - Responsive layout for different screen sizes
+- Accessibility considered throughout the interface, with a final check using Lighthouse
 
 ## Design
 
