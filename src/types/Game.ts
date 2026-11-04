@@ -7,7 +7,7 @@ export type Game = {
   coverUrl: string;
   notes: string;
   createdAt: string;
-  upDatedAt: string;
+  updatedAt: string;
 };
 
 export type GameStatus = "want" | "playing" | "completed" | "dropped";
