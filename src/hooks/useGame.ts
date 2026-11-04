@@ -61,16 +61,27 @@ export const useGame = (id: string | undefined) => {
 
   // DELETE
   const deleteGame = async () => {
-    const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/games/${id}`,
-      {
-        method: "DELETE",
-      },
-    );
-    if (!response.ok) {
+    if (!id) return false;
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/games/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
+      if (!response.ok) {
+        setError("Could not delete the game. Please try again later :)");
+        return false;
+      }
+      return true;
+    } catch (error) {
+      setError(
+        error instanceof Error
+          ? error.message
+          : "Could not delete the game. Please try again later :)",
+      );
       return false;
     }
-    return true;
   };
 
   return { game, error, isLoading, updateGame, deleteGame } as const;
