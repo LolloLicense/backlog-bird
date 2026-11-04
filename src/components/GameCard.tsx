@@ -72,6 +72,7 @@ const GameCard = ({ game }: GameCardProps) => {
             <Link
               to={`/games/${game.id}`}
               className="mt-auto self-end shrink-0"
+              aria-label={`View details for ${game.title}`}
             >
               <img src="/icons/arrow.svg" alt="" />
             </Link>
