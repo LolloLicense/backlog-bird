@@ -2,7 +2,7 @@ import GameCardGrid from "../components/GameCardGrid";
 import { useGames } from "../hooks/useGames";
 import GameFilter from "./GameFilter";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import type { GameStatus } from "../types/Game";
+import type { GameStatus } from "../types/game";
 import ErrorMessage from "./ErrroMessage";
 import LoadingMessage from "./LoadingMessage";
 

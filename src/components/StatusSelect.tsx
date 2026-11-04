@@ -1,4 +1,4 @@
-import type { GameStatus } from "../types/Game";
+import type { GameStatus } from "../types/game";
 
 type StatusSelectProps = {
   value: GameStatus;

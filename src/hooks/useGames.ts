@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Game } from "../types/Game";
+import type { Game } from "../types/game";
 
 export const useGames = () => {
   const [games, setGames] = useState<Game[]>([]);

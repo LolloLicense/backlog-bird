@@ -1,5 +1,5 @@
 import GameCard from "./GameCard";
-import type { Game } from "../types/Game";
+import type { Game } from "../types/game";
 
 type GameCardGridProps = {
   games: Game[];

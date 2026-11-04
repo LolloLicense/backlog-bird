@@ -1,13 +1,6 @@
 import { Link } from "react-router";
-import type { Game, Platform } from "../types/Game";
-import {
-  TfiGame,
-  TfiTablet,
-  TfiHeadphoneAlt,
-  TfiAndroid,
-  TfiDrupal,
-} from "react-icons/tfi";
-import { RiRobotFill } from "react-icons/ri";
+import type { Game } from "../types/game";
+import { getPlatformIcon } from "../utils/gameUi";
 
 type GameCardProps = {
   game: Game;
@@ -35,25 +28,6 @@ const getStatusColor = (status: Game["status"]) => {
         top: "bg-ink text-background",
         bottom: "bg-background text-ink",
       };
-  }
-};
-
-const getPlatformIcon = (platform: Platform) => {
-  switch (platform.toLocaleLowerCase()) {
-    case "pc":
-      return TfiHeadphoneAlt;
-    case "switch":
-      return TfiAndroid;
-    case "playstation 5":
-      return TfiGame;
-    case "xbox":
-      return TfiDrupal;
-    case "game boy":
-      return TfiTablet;
-    case "other":
-      return RiRobotFill;
-    default:
-      return TfiGame;
   }
 };
 

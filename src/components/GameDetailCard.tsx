@@ -1,4 +1,4 @@
-import type { Game } from "../types/Game";
+import type { Game } from "../types/game";
 import { formatDate } from "../utils/format";
 
 type GameDetailCardProps = {
@@ -20,13 +20,13 @@ const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
         </div>
         {/* Right column */}
         <div className="flex flex-col">
-          <span className="font-dazzle text-sm tracking-wider pb-2">
-            {game.status}
+          <span className="font-dazzle text-xs tracking-wider pb-2">
+            Status: {game.status}
           </span>
 
-          <h2 className="font-dazzle uppercase text-2xl tracking-wider">
+          <h1 className="font-dazzle uppercase text-3xl tracking-wider">
             {game.title}
-          </h2>
+          </h1>
           <div className="py-4">
             <h3 className="font-dazzle text-xs uppercase">Platform :</h3>
             <p className="uppercase font-fira pt-2">{game.platform}</p>

@@ -1,4 +1,4 @@
-import type { Platform } from "../types/Game";
+import type { Platform } from "../types/game";
 
 type PlatformSelectProps = {
   value: string;

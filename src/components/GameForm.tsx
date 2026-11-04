@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { GameStatus, Platform } from "../types/Game";
+import type { GameStatus, Platform } from "../types/game";
 import PlatformSelect from "./PlatformSelect";
 import StatusSelect from "./StatusSelect";
 import RatingSelect from "./RatingSelect";

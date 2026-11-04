@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Game } from "../types/Game";
+import type { Game } from "../types/game";
 
 export const useGame = (id: string | undefined) => {
   const [isLoading, setIsLoading] = useState(false);
