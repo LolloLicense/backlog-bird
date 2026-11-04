@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="grid grid-cols-2 justify-between">
+    <section className="grid grid-cols-2 justify-between pb-10">
       <div className="max-w-242.5">
         <p className="font-fira uppercase text-3xl pb-2">
           Your personal backlog bird

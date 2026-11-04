@@ -17,11 +17,15 @@ const GameSection = () => {
       ? games
       : games.filter((game) => game.status === selectedStatus);
 
-  return (
-    <section className="pb-10">
-      {error && <ErrorMessage message={error} />}
-      {isLoading && <LoadingMessage />}
+  if (isLoading) {
+    return <LoadingMessage />;
+  }
 
+  if (error) {
+    return <ErrorMessage message={error} />;
+  }
+  return (
+    <section className="py-10">
       <div className="flex my-6 items-center gap-4">
         <span className="text-3xl font-bold bg-ink text-background uppercase p-8 font-dazzle tracking-wider">
           {String(games.length).padStart(2, "0")} games

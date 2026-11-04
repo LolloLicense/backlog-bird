@@ -3,6 +3,10 @@ type ErrorMessageProps = {
 };
 
 const ErrorMessage = ({ message }: ErrorMessageProps) => {
-  return <p className="error">Could not load games: {message}</p>;
+  return (
+    <p className="font-dazzle tracking-widest text-2xl text-accent">
+      Could not load games: {message}
+    </p>
+  );
 };
 export default ErrorMessage;
