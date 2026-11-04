@@ -1,6 +1,6 @@
 import type { Game } from "../types/game";
 import { formatDate } from "../utils/format";
-import { getPlatformIcon } from "../utils/gameUi";
+import { getPlatformIcon } from "../utils/gameUI";
 
 type GameDetailCardProps = {
   game: Game;
@@ -10,7 +10,7 @@ type GameDetailCardProps = {
 
 const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
   const stars = [1, 2, 3, 4, 5];
-  const PlatformIcon = getPlatformIcon(game.platform);
+
   return (
     <>
       <article className="grid md:grid-cols-2 gap-4 items-stretch pt-8">
@@ -23,7 +23,11 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
             />
           ) : (
             <div className="bg-ink flex items-center justify-center w-full h-full">
-              <PlatformIcon className="text-success text-9xl h-auto self-center p-4" />
+              {getPlatformIcon(
+                game.platform,
+
+                "text-success text-9xl h-auto self-center p-4",
+              )}
             </div>
           )}
         </div>

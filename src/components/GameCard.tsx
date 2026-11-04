@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import type { Game } from "../types/game";
-import { getPlatformIcon } from "../utils/gameUi";
+import { getPlatformIcon } from "../utils/gameUI";
 
 type GameCardProps = {
   game: Game;
@@ -34,7 +34,6 @@ const getStatusColor = (status: Game["status"]) => {
 const GameCard = ({ game }: GameCardProps) => {
   const styles = getStatusColor(game.status);
   const stars = [1, 2, 3, 4, 5];
-  const PlatformIcon = getPlatformIcon(game.platform);
 
   return (
     <>
@@ -43,10 +42,11 @@ const GameCard = ({ game }: GameCardProps) => {
           <span className="font-dazzle text-[1rem] tracking-wider pb-2">
             {game.status}
           </span>
-          <PlatformIcon
-            className="w-28 h-auto self-center"
-            aria-hidden="true"
-          />
+          {getPlatformIcon(
+            game.platform,
+
+            "w-28 h-auto self-center",
+          )}
         </div>
         <div
           className={`h-40 p-4 flex flex-col border-t-3 border-ink ${styles?.bottom}`}
