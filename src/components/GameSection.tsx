@@ -3,6 +3,8 @@ import { useGames } from "../hooks/useGames";
 import GameFilter from "./GameFilter";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import type { GameStatus } from "../types/Game";
+import ErrorMessage from "./ErrroMessage";
+import LoadingMessage from "./LoadingMessage";
 
 const GameSection = () => {
   const { games, isLoading, error } = useGames();
@@ -17,10 +19,9 @@ const GameSection = () => {
 
   return (
     <>
-      {error && <p className="error">Could not load games: {error}</p>}
-      {isLoading && (
-        <p className="font-dazzle tracking-widest">Loading games...</p>
-      )}
+      {error && <ErrorMessage message={error} />}
+      {isLoading && <LoadingMessage />}
+
       <div className="flex my-6 items-center gap-4">
         <span className="text-3xl font-bold bg-ink text-background uppercase p-8 font-dazzle tracking-wider">
           {String(games.length).padStart(2, "0")} games
