@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <header className="py-10 flex justify-between">
+    <header className="py-10 px-6 lg:px-10 flex justify-between">
       <Link to="/">
         <img src="/icons/logo.svg" alt="Backlog Bird logo" />
       </Link>

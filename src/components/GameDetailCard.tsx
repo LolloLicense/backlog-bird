@@ -13,8 +13,8 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
 
   return (
     <>
-      <article className="grid md:grid-cols-2 gap-4 items-stretch pt-8">
-        <div className="relative aspect-2/2">
+      <article className="grid gap-6 sm:grid-cols-2 md:gap-4 items-stretch pt-4 md:pt-8 mb-6">
+        <div className="relative aspect-square w-full overflow-hidden">
           {game.coverUrl ? (
             <img
               src={game.coverUrl}
@@ -32,7 +32,7 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
           )}
         </div>
         {/* Right column */}
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-full min-w-0">
           <span className="font-dazzle text-xs tracking-wider pb-2">
             Status: {game.status}
           </span>
@@ -40,16 +40,16 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
           <h1 className="font-dazzle uppercase text-3xl tracking-wider">
             {game.title}
           </h1>
-          <div className="pt-8">
+          <div className="py-2 md:py-8">
             <h3 className="font-dazzle text-xs uppercase">Platform :</h3>
             <p className="uppercase font-fira pt-2">{game.platform}</p>
           </div>
 
-          <div className="py-8">
+          <div className="py-2 md:py-8">
             <h3 className="font-dazzle text-xs uppercase">Notes :</h3>
             <p className="font-fira">{game.notes}</p>
           </div>
-          <div className="py-8">
+          <div className="py-2 md:py-8">
             <h3 className="font-dazzle text-xs uppercase pb-2">Rating :</h3>
             <div className="flex">
               {stars.map((star) => (
@@ -65,7 +65,7 @@ const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
             </div>
           </div>
 
-          <div className="flex gap-4 py-6 justify-start mt-auto">
+          <div className="flex gap-4 py-4 md:py-6 justify-start md:mt-auto">
             <button
               type="button"
               onClick={onEdit}

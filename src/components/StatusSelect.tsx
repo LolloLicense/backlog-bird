@@ -12,7 +12,7 @@ const StatusSelect = ({ value, onChange, error }: StatusSelectProps) => {
   return (
     <label
       htmlFor="status"
-      className="flex flex-col gap-2 uppercase text-2xl font-dazzle"
+      className="flex flex-col gap-2 uppercase text-lg lg:text-2xl font-dazzle"
     >
       <select
         id="status"

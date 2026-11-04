@@ -39,7 +39,6 @@
 }
 
 body {
-  padding-inline: 2.5rem;
   color: var(--color-ink);
   background-color: var(--color-background);
 }

@@ -18,7 +18,7 @@ const platforms: Platform[] = [
 const PlatformSelect = ({ value, onChange, error }: PlatformSelectProps) => {
   return (
     <label
-      className="flex flex-col gap-2 uppercase text-2xl font-dazzle"
+      className="flex flex-col gap-2 uppercase text-lg lg:text-2xl font-dazzle"
       htmlFor="platform"
     >
       <select

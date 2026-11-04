@@ -8,7 +8,7 @@ const RatingSelect = ({ value, onChange }: RatingSelectProps) => {
 
   return (
     <fieldset className="flex gap-2">
-      <legend className=" uppercase text-2xl font-dazzle">
+      <legend className=" uppercase text-lg lg:text-2xl font-dazzle">
         Set your Rating
       </legend>
 

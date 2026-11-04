@@ -26,11 +26,11 @@ const GameSection = () => {
   }
   return (
     <section className="py-10">
-      <div className="flex my-6 items-center gap-4">
-        <span className="text-3xl font-bold bg-ink text-background uppercase p-8 font-dazzle tracking-wider">
+      <div className="flex my-6 items-center gap-4 flex-wrap">
+        <span className="text-lg lg:text-3xl font-bold bg-ink text-background uppercase p-2 lg:p-8 font-dazzle tracking-wider">
           {String(games.length).padStart(2, "0")} games
         </span>
-        <h2 className="font-dazzle text-3xl uppercase tracking-wider">
+        <h2 className="font-dazzle text-lg lg:text-3xl uppercase tracking-wider">
           Currently in the nest
         </h2>
       </div>

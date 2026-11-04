@@ -19,12 +19,12 @@ const GameFilter = ({ selectedStatus, onStatusChange }: GameFilterProps) => {
     { label: "DROPPED", value: "dropped" },
   ];
   return (
-    <div className="flex gap-4 pb-8">
+    <div className="flex gap-2 lg:gap-4 pb-8 flex-wrap">
       {filters.map((filter) => (
         <button
           type="button"
           key={filter.value}
-          className={`py-2 px-4 font-fira cursor-pointer 
+          className={`py-2 px-2 lg:px-4 font-fira cursor-pointer 
             ${
               selectedStatus === filter.value
                 ? "bg-accent text-ink"

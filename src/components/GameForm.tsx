@@ -90,7 +90,7 @@ const GameForm = ({
   return (
     <form onSubmit={handleSubmit} className="mt-8 grid gap-6 max-w-2xl mx-auto">
       <label
-        className="flex flex-col gap-2 uppercase text-2xl font-dazzle"
+        className="flex flex-col gap-2 uppercase text-lg lg:text-2xl font-dazzle"
         htmlFor="title"
       >
         Title
@@ -126,7 +126,7 @@ const GameForm = ({
         error={errors.platform}
       />
       <label
-        className="flex flex-col gap-2 uppercase text-2xl font-dazzle"
+        className="flex flex-col gap-2 uppercase text-lg lg:text-2xl font-dazzle"
         htmlFor="Notes"
       >
         Notes
@@ -142,7 +142,7 @@ const GameForm = ({
       )}
       <button
         type="submit"
-        className="font-fira font-bold uppercase py-4 px-4 bg-accent text-lg justify-self-end cursor-pointer"
+        className="font-fira font-bold uppercase py-4 px-4 bg-accent text-lg justify-self-end cursor-pointer mt-4"
       >
         {submitLabel}
       </button>
