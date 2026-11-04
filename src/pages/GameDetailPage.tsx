@@ -3,10 +3,14 @@ import { useGame } from "../hooks/useGame";
 import LoadingMessage from "../components/LoadingMessage";
 import ErrorMessage from "../components/ErrroMessage";
 import GameDetailCard from "../components/GameDetailCard";
+import { useState } from "react";
+import EditGameModal from "../components/EditGameModal";
+import type { GameFormData } from "../types/game";
 
 const GameDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleDelete = async () => {
     const success = await deleteGame();
@@ -16,7 +20,14 @@ const GameDetailPage = () => {
     }
   };
 
-  const { game, isLoading, error, deleteGame } = useGame(id);
+  const handleUpdate = async (updatedGame: GameFormData) => {
+    const updated = await updateGame(updatedGame);
+    if (updated) {
+      setIsEditing(false);
+    }
+  };
+
+  const { game, isLoading, error, deleteGame, updateGame } = useGame(id);
   if (isLoading) {
     return <LoadingMessage />;
   }
@@ -37,8 +48,19 @@ const GameDetailPage = () => {
           Back to all games
         </Link>
         <div className="w-full max-w-5xl mx-auto">
-          <GameDetailCard game={game} onDelete={handleDelete} />
+          <GameDetailCard
+            game={game}
+            onDelete={handleDelete}
+            onEdit={() => setIsEditing(true)}
+          />
         </div>
+        {isEditing && (
+          <EditGameModal
+            game={game}
+            onClose={() => setIsEditing(false)}
+            onSubmit={handleUpdate}
+          />
+        )}
       </section>
     </>
   );

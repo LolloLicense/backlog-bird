@@ -6,6 +6,7 @@ import RatingSelect from "./RatingSelect";
 
 type GameFormProps = {
   onSubmit: (game: GameFormData) => void;
+  initialValues?: GameFormData;
 };
 type Errors = {
   title?: string;
@@ -13,12 +14,18 @@ type Errors = {
   status?: string;
 };
 
-const GameForm = ({ onSubmit }: GameFormProps) => {
-  const [title, setTitle] = useState("");
-  const [platform, setPlatform] = useState<Platform | "">("");
-  const [status, setStatus] = useState<GameStatus | "">("");
-  const [rating, setRating] = useState<number | null>(null);
-  const [notes, setNotes] = useState("");
+const GameForm = ({ onSubmit, initialValues }: GameFormProps) => {
+  const [title, setTitle] = useState(initialValues?.title ?? "");
+  const [platform, setPlatform] = useState<Platform | "">(
+    initialValues?.platform ?? "",
+  );
+  const [status, setStatus] = useState<GameStatus | "">(
+    initialValues?.status ?? "",
+  );
+  const [rating, setRating] = useState<number | null>(
+    initialValues?.rating ?? null,
+  );
+  const [notes, setNotes] = useState(initialValues?.notes ?? "");
   const [errors, setErrors] = useState<Errors>({});
 
   const handleStatusChange = (newStatus: GameStatus) => {

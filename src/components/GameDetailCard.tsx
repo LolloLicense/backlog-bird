@@ -5,9 +5,10 @@ import { getPlatformIcon } from "../utils/gameUi";
 type GameDetailCardProps = {
   game: Game;
   onDelete: () => void;
+  onEdit: () => void;
 };
 
-const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
+const GameDetailCard = ({ game, onDelete, onEdit }: GameDetailCardProps) => {
   const stars = [1, 2, 3, 4, 5];
   const PlatformIcon = getPlatformIcon(game.platform);
   return (
@@ -79,6 +80,7 @@ const GameDetailCard = ({ game, onDelete }: GameDetailCardProps) => {
           <div className="flex gap-4 pt-4 justify-start mt-auto">
             <button
               type="button"
+              onClick={onEdit}
               className="bg-accent text-ink text-sm px-4 py-2 font-dazzle cursor-pointer"
             >
               EDIT GAME
