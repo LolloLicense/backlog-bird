@@ -18,7 +18,7 @@ const GameSection = () => {
       : games.filter((game) => game.status === selectedStatus);
 
   return (
-    <>
+    <section className="pb-10">
       {error && <ErrorMessage message={error} />}
       {isLoading && <LoadingMessage />}
 
@@ -35,7 +35,7 @@ const GameSection = () => {
         onStatusChange={setSelectedStatus}
       />
       <GameCardGrid games={filteredGames} />
-    </>
+    </section>
   );
 };
 export default GameSection;
